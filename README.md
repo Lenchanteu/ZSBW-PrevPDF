@@ -5,6 +5,9 @@ This project is intended for the **Zone de Secours du Brabant wallon**. It can a
 
 This program allows PDF files to be generated from a Word file and data entered by the user.
 
+# features
+
+Connect by clicking connection, with username test and password test, or create an account in inscription. You will receive a confirmation email if you create an account. After having created an account, go to rapport to create new files. You can access the admin dashboard at /admin with password Admin
 # Prerequisites
 
 This project uses **Microsoft Word** and **Python 3.13.15**. Both programs are required for the application to function properly.
