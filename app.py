@@ -586,7 +586,7 @@ def myfiles():
 def downloads(filename, uname):
     if not session.get("logged_in"):
         abort(403)
-    if uname == None:
+    if uname == 'None':
         uname = session["uname"]
     user_folder = os.path.join(DEFAULT_FILE_PATH, uname, "RAPPORTS")
 
