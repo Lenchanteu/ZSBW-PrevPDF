@@ -1,4 +1,4 @@
-#EN
+# EN
 # Description
 
 This project is intended for the **Zone de Secours du Brabant wallon**. It can also be modified and adapted for other applications.
@@ -89,7 +89,7 @@ This program may not be sold without the explicit permission of the author.
 
 [ZSBW PrevPDF](https://github.com/Lenchanteu/ZSBW-PrevPDF) © 2026 by [Merlin Van Cranem](https://github.com/Lenchanteu) is distributed under a source-available license. [More information](https://github.com/Lenchanteu/ZSBW-PrevPDF/blob/main/LICENSE.md).
 
-#FR
+# FR
 # Description
 
 Ce projet est destiné à la **Zone de Secours du Brabant wallon**. Il peut également être modifié et adapté à d'autres applications.
