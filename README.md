@@ -1,3 +1,95 @@
+#EN
+# Description
+
+This project is intended for the **Zone de Secours du Brabant wallon**. It can also be modified and adapted for other applications.
+
+This program generates PDF files from a Word document template and data entered by the user.
+
+# Requirements
+
+This project uses **Python 3.13**. On Windows, **Microsoft Word** is required for PDF generation. On Linux, **LibreOffice** is required instead.
+
+The project was developed and tested with **Python 3.13.15** and **Microsoft Word 365 — version 16.0.20326.20112**, or a compatible version. The author cannot guarantee that the application will work correctly with other versions of these programs.
+
+A functional email address is also required.
+
+The program was tested on **Windows 11**. A **Linux** version is also available and has been tested on Raspberry Pi OS and Ubuntu Linux.
+
+For Linux installations, `pdf_maker.py` must use LibreOffice for PDF conversion, and `pywin32` must not be installed. **LibreOffice is required on Linux.**
+
+# How to Use This Program
+
+1. Download the files from GitHub and extract the ZIP archive into the installation directory.
+
+2. Install [Python 3.13](https://www.python.org/downloads/), then open a terminal in the installation directory and run:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Configure your `.env` file using the provided `.env.example` file as a template.
+
+4. Configure the email addresses used to send reports to municipalities in `email_config.py`.
+
+5. Start the application:
+
+```bash
+cd Your_installation_directory
+flask run
+```
+
+For production deployments, it is recommended to use a production WSGI server such as Gunicorn instead of Flask's development server.
+
+# Technical Description
+
+This section provides a technical description of the application. To learn how to use the program, please consult the `Your_app_name/usage` page.
+
+1. The current application architecture is not designed for a large number of simultaneous users. In practice, it is intended for approximately **20 users generating PDF files simultaneously**.
+
+2. A user account is required in order to store and manage generated files.
+
+3. Generated files are stored in the application's configured data directory. On the original Windows installation, this was `C:/ProgramData/ZSBW/`.
+
+4. An administration dashboard is available at `/admin`.
+
+5. An email address is required to verify the identity of users and to allow them to recover or change their password.
+
+6. This program can be adapted to generate other types of documents. This can be done by modifying `Rapport_de_prévention_incendie_template.docx` and `rapport.html` in `/templates`, while following the format used by the existing files.
+
+   **Warning:** the variable names used in these files must be preserved exactly. If the variables are **not exactly identical**, PDF generation will **not work**.
+
+7. For additional information or requests, please contact the author through the discussions of the GitHub repository, in the **General** category, or by email at `vancranemmerlin@gmail.com`.
+
+# Security
+
+This program was developed with security as one of its priorities. To help protect users, the application uses, among other measures:
+
+- password hashing with **Argon2**;
+- **CSRF** protection;
+- `HttpOnly` and `SameSite=Lax` session cookies;
+- file path validation to help prevent directory traversal attacks;
+- mandatory authentication for accessing users' reports;
+- mandatory authentication for making account modifications.
+
+It is **strongly recommended never to share the security keys** stored in the `.env` file. These keys help protect the users and files of the application.
+
+If you believe that one of these keys has been disclosed to an unauthorized person, please **replace it immediately**.
+
+# GDPR
+
+This program was developed in Belgium, within the European Union. In accordance with European Union data protection legislation, collected data is protected under the [General Data Protection Regulation (GDPR)](https://www.cnil.fr/fr/reglement-europeen-protection-donnees).
+
+More information about the collection and processing of data can be found on the `/cookies` page.
+
+# License
+
+This program is **source-available**. Anyone may use, modify, and redistribute the program provided that the author is appropriately credited.
+
+This program may not be sold without the explicit permission of the author.
+
+[ZSBW PrevPDF](https://github.com/Lenchanteu/ZSBW-PrevPDF) © 2026 by [Merlin Van Cranem](https://github.com/Lenchanteu) is distributed under a source-available license. [More information](https://github.com/Lenchanteu/ZSBW-PrevPDF/blob/main/LICENSE.md).
+
+#FR
 # Description
 
 Ce projet est destiné à la **Zone de Secours du Brabant wallon**. Il peut également être modifié et adapté à d'autres applications.
